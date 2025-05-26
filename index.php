@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Fahrenheit to celsius calculetor " />
+  <meta name="description" content="Interest calculator " />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Emre Guzel" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
-  <title>Division using Looping</title>
+  <title>Interest calculator</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Division using Looping
+          <span class="mdl-layout-title">Interest calculator
           </span>
         </div>
       </header>
@@ -58,7 +58,7 @@
         <br><br>
         <p>Enter the number of Years</p>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="number_of_years">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="number-of-years">
           <label class="mdl-textfield__label" for="second-num"></label>
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>

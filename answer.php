@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Fahrenheit to celsius calculato " />
+  <meta name="description" content="Interest calculator" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Emre Guzel" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
-  <title>Fahrenheit to celsius calculato </title>
+  <title>Interest calculator</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Fahrenheit to celsius calculato</span>
+          <span class="mdl-layout-title">Interest calculator</span>
         </div>
       </header>
       <main class="mdl-layout__content">
@@ -35,27 +35,33 @@
         </div>
         <br><br>
         <?php
+        // Getting inputs safely
+        $money = isset($_GET["money"]) ? $_GET["money"] : 0;
+        $interestRate = isset($_GET["interest-rate"]) ? $_GET["interest-rate"] : 0;
+        $numberOfYears = isset($_GET["number-of-years"]) ? $_GET["number-of-years"] : 0;
 
-        // Setting the varibles
-        $firstNum = $_GET["first-num"];
-        $secondNum = $_GET["second-num"];
-        $result = 0;
-        $remainder = $firstNum;
-        // setting the whilte true 
-        while (true) {
-          if ($remainder >= $secondNum) {
-            $remainder = $remainder - $secondNum;
-            $result++;
-          } else {
-            break;
-          }
+        $totalAmount = $money;
+        $breakdown = "";
+
+        // Calculate interest over the years
+        for ($year = 1; $year <= $numberOfYears; $year++) {
+          $previousAmount = $totalAmount;
+          $totalAmount = $totalAmount * (1 + $interestRate / 100);
+
+          $breakdown .= "Year " . $year . ": $" . round($previousAmount, 2) .
+            " × " . round((1 + $interestRate / 100), 2) .
+            " = $" . round($totalAmount, 2) . "<br>" . "&nbsp" . "&nbsp";
         }
-        echo " <b> &nbsp  First Number </b>: $firstNum<br>";
-        echo " <b> &nbsp Second Number  </b> : $secondNum<br>";
-        echo "<b> &nbsp Result </b>:  $result<br>";
-        echo " <b> &nbsp  Remainder </b>: $remainder<br>";
+
+        // Output results
+        echo ("<b>" . "&nbsp" . "&nbsp" . "Initial Money: $" . round($money, 2) . "</b>");
+        echo ("<br>" . "<b>" . "&nbsp" . " Interest Rate: " . round($interestRate, 2) . "%" . "</b>");
+        echo ("<br>" . "<b>" . "&nbsp" . "&nbsp" . "Years: " . $numberOfYears . "<br>" . "<br>" . "</b>");
+        echo ("<b>" . "&nbsp" . "&nbsp" . $breakdown . "</b>");
+        echo ("<br>" . "<b>" . "&nbsp" . "&nbsp" . "Final Amount: $" . round($totalAmount, 2) . "</b>");
+
         ?>
-        <br /> 
+        <br />
         <div class="page-content-answer">
           &nbsp <a href=" ./index.php">Return ...</a>
         </div>
