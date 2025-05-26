@@ -39,33 +39,40 @@
         </b>
         <br>
         <b>
-          <p>Enter the first Number</p>
+          <p>Enter the initial money</p>
         </b>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="first-num">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="money">
           <label class="mdl-textfield__label" for="first-num"></label>
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
         <br>
         <b>
-          <p>Enter the second Number</p>
+          <p>Enter the interest rate %</p>
         </b>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="second-num">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="interest-rate">
           <label class="mdl-textfield__label" for="second-num"></label>
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
         <br><br>
+        <p>Enter the number of Years</p>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="number_of_years">
+          <label class="mdl-textfield__label" for="second-num"></label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <br>
         <main id="click-me " class="mdl-layout__content">
           <button id="click" type="submit" name="celsius"
             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-            Generate
+            Calculate your intreset rate
           </button>
         </main>
       </form>
     </div>
     <br><br>
-    <img class="Calculate" src="images/divtoin.jpg" alt="Divitoin">
+    <img class="Calculate" src="images/intreset.jpg" alt="Divitoin">
   </div>
 </body>
 
